@@ -8,21 +8,25 @@ const Projects = () => {
       description: "Full-stack e-commerce platform with Spring Boot and React, featuring authentication, role-based access, Stripe payments, and a robust admin dashboard.",
       techStack: ["React", "Spring Boot", "PostgreSQL", "TailwindCSS"],
       liveLink: "https://example.com",
-      githubLink: "https://github.com/yourusername/project1"
+      // Replaced single githubLink with frontend and backend links
+      githubFrontend: "https://github.com/oliviyaa3/ecommerce-frontend", 
+      githubBackend: "https://github.com/oliviyaa3/ecommerce-backend"
     },
     {
-      title: "Task Management API",
-      description: "A robust RESTful API built for a productivity app, featuring JWT authentication, role-based access, and automated testing.",
-      techStack: ["Java", "Spring Security", "PostgreSQL", "Docker"],
+      title: "NoScroll App",
+      description: "It blocks infinite scrolling on social media apps.",
+      techStack: ["Kotlin", "Jetpack Compose", "Material Design 3", "Android Accessibility Service API"],
       liveLink: "https://example.com",
-      githubLink: "https://github.com/yourusername/project2"
+      // Uses the standard single link
+      githubLink: "https://github.com/oliviyaa3/Scroll-Lock/tree/main"
     },
     {
-      title: "Weather Forecast Web App",
-      description: "A responsive web application that fetches real-time weather data from a third-party API based on user location.",
-      techStack: ["JavaScript", "React", "OpenWeather API", "CSS"],
+      title: "Swagtest-AI",
+      description: "Writes test cases for APIs and suggest annotation for API documentation.",
+      techStack: ["Java", "Spring Boot"],
       liveLink: "https://example.com",
-      githubLink: "https://github.com/yourusername/project3"
+      // Uses the standard single link
+      githubLink: "https://github.com/oliviyaa3/swagtest-ai"
     }
   ];
 
@@ -61,26 +65,20 @@ const Projects = () => {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                     {project.description}
                   </p>
-                  {/* <div className="mt-6 text-[#55198b] dark:text-purple-400 font-semibold animate-pulse">
-                    Hover to view details →
-                  </div> */}
                 </div>
 
                 {/* BACK OF CARD */}
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#55198b] dark:bg-purple-900 rounded-2xl p-8 flex flex-col justify-between items-center text-center">
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#55198b] dark:bg-purple-900 rounded-2xl p-6 flex flex-col justify-between items-center text-center">
                   
-                  <div className="w-full">
-                    {/* <h4 className="text-xl font-bold text-white mb-4 border-b border-purple-400/50 pb-2">
-                      Tech Stack
-                    </h4> */}
+                  <div className="w-full mt-2">
                     <div className="flex flex-wrap justify-center gap-2">
                       {project.techStack.map((tech, idx) => (
                         <span 
                           key={idx} 
-                          className="bg-white/20 text-white text-sm py-1 px-3 rounded-full backdrop-blur-sm"
+                          className="bg-white/20 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm"
                         >
                           {tech}
                         </span>
@@ -88,24 +86,57 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Links*/}
-                  <div className="flex gap-4 w-full justify-center">
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white text-[#55198b] hover:bg-gray-100 px-4 py-2 rounded-lg font-bold transition-colors duration-300"
-                    >
-                      <FaExternalLinkAlt size={14} /> Visit
-                    </a>
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 px-4 py-2 rounded-lg font-bold transition-colors duration-300"
-                    >
-                      <FaGithub size={16} /> GitHub
-                    </a>
+                  {/* Links Container - Added flex-wrap and reduced gap so 3 buttons fit nicely */}
+                  <div className="flex flex-wrap gap-3 w-full justify-center mb-2">
+                    
+                    {/* Live Visit Link */}
+                    {project.liveLink && (
+                      <a 
+                        href={project.liveLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-white text-[#55198b] hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-bold transition-colors duration-300"
+                      >
+                        <FaExternalLinkAlt size={12} /> Visit
+                      </a>
+                    )}
+
+                    {/* Single GitHub Link */}
+                    {project.githubLink && (
+                      <a 
+                        href={project.githubLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm font-bold transition-colors duration-300"
+                      >
+                        <FaGithub size={14} /> GitHub
+                      </a>
+                    )}
+
+                    {/* Frontend GitHub Link */}
+                    {project.githubFrontend && (
+                      <a 
+                        href={project.githubFrontend} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm font-bold transition-colors duration-300"
+                      >
+                        <FaGithub size={14} /> Frontend
+                      </a>
+                    )}
+
+                    {/* Backend GitHub Link */}
+                    {project.githubBackend && (
+                      <a 
+                        href={project.githubBackend} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm font-bold transition-colors duration-300"
+                      >
+                        <FaGithub size={14} /> Backend
+                      </a>
+                    )}
+
                   </div>
 
                 </div>

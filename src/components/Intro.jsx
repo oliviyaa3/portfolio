@@ -23,11 +23,10 @@ const Intro = () => {
         </h3>
         
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
-          A Software Developer with experience 
-          building scalable backend systems using Java and Spring Boot, and 
-          deploying them on cloud platforms with modern DevOps practices. 
-          I am passionate about creating efficient, secure applications
-          that solve real-world problems.
+          A Software Developer with experience building scalable backend systems using 
+          Java and Spring Boot, and deploying them on cloud platforms with modern 
+          DevOps practices. I’m passionate about creating efficient, secure 
+          applications that solve real-world problems, and I’m currently exploring AI.
         </p>
 
         {/* Buttons */}
